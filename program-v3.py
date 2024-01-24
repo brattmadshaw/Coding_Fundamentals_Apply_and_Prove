@@ -18,13 +18,11 @@ root.title("ISMS Login")
 
 username_label = tk.Label(root, text="Username:")
 username_label.grid()
-
 username_entry = tk.Entry(root)
 username_entry.grid()
 
 password_label = tk.Label(root, text="Password:")
 password_label.grid()
-
 password_entry = tk.Entry(root)
 password_entry.grid()
 
