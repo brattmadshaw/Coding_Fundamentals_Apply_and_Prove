@@ -6,6 +6,7 @@ from customtkinter import *
 ### Create login button logic as function for when button is 'clicked'
 def login_button():
     global invalid_username_label
+    global entered_username
     ### Obtaining username and password from entry fields once button has been 'Clicked'
     entered_username = username_entry.get()
     entered_password = password_entry.get()
@@ -28,8 +29,23 @@ def open_dashboard_page():
     login_button.grid_forget()
     invalid_username_label.grid_forget()
 
-    dashboard_label = CTkLabel(root, text="You have X items outstanding")
-    dashboard_label.grid(row=0, column=2, padx=10, pady=2)
+    dashboard_title = CTkLabel(root, text=f"Dashboard Page")
+    dashboard_title.grid(row=1, column=2, padx=10, pady=2)
+
+    dashboard_greeting_message = CTkLabel(root, text=f"Welcome to the dashboard {entered_username}.")
+    dashboard_greeting_message.grid(row=2, column=2, padx=10, pady=2)
+
+    users_in_system_label = CTkLabel(root, text="There is X items outstanding")
+    users_in_system_label.grid(row=3, column=2, padx=10, pady=2)
+
+    users_in_system_label = CTkLabel(root, text="36 users in the system")
+    users_in_system_label.grid(row=1, column=3, padx=10, pady=2)
+   
+    assets_in_system_label = CTkLabel(root, text="22 assets in the system")
+    assets_in_system_label.grid(row=2, column=3, padx=10, pady=2, sticky="nsew")
+
+    logout_button = CTkButton(root, text="Logout")
+    logout_button.grid(row=1, column=1, pady=2)
 
 ### root variable for loading tkinter window with title
 root = tk.Tk()
